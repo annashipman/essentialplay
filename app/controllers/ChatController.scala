@@ -21,19 +21,20 @@ object ChatController extends Controller {
     )
 
     def index = Action { request =>
-      Ok(views.html.index(messages)) 
+      Ok(views.html.index(messages, messageForm)) 
     }
 
     def postMessage = Action { request =>
       val populatedForm: Form[Message] = messageForm.bindFromRequest()(request)
 
       populatedForm.fold(
-        errors => {
-          BadRequest("errors")
+        (errors: Form[Message]) => {
+          println("error")
+          Ok(views.html.index(messages, errors))
         },
         message => {
           messages = messages :+ Message(message.name, message.text)
-          Ok(views.html.index(messages))
+          Ok(views.html.index(messages, populatedForm))
         }
       )
     }

@@ -1,4 +1,5 @@
-@(messages: Seq[Message])
+@(messages: Seq[Message], messageForm: Form[Message])
+@import helper._
 
 <html>
   <body>
@@ -13,5 +14,13 @@
     <input name="name">
     <button type="submit">Go!</button>
     </form>
+
+    @helper.form(action = routes.ChatController.postMessage()){
+    <h1>Hello Anna</h1>
+
+    @helper.inputText(messageForm("name"))
+    @helper.inputText(messageForm("text"))
+    }
+
   </body>
 </html>
