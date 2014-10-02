@@ -15,4 +15,5 @@ Template is just a function like everything else in Scala
 By default there are a function of no args
 By putting the twirl at the top, we're saying it takes a parameter
 it's a function that now takes one parameter.
-
+To use it we use the @ (twirl)
+@ then scala expression, then it puts result of expression into html
