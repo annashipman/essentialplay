@@ -9,14 +9,7 @@
     }
     </ul>
 
-    <form method="POST" action="/postMessage">
-    <input name="text">
-    <input name="name">
-    <button type="submit">Go!</button>
-    </form>
-
     @helper.form(action = routes.ChatController.postMessage()){
-    <h1>Hello Anna</h1>
 
     @helper.inputText(messageForm("name"))
     @helper.inputText(messageForm("text"))
