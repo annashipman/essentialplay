@@ -10,3 +10,9 @@ Can you make closing slashes optional?
 https://playframework.com/documentation/2.3.x/ScalaHome is useful.
 A view a html file that compiles to Scala (I think...)
 returns a type called Content
+Usually suggest have a controllers layer that passes stuff off to the business logic layer (Dave calls it services layer) and then passes results off to controllers layer, i.e. a webby layer, and a business logic layer. We're not going to do this here for the purposes of speed.
+Template is just a function like everything else in Scala
+By default there are a function of no args
+By putting the twirl at the top, we're saying it takes a parameter
+it's a function that now takes one parameter.
+
