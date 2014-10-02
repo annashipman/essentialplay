@@ -17,3 +17,5 @@ By putting the twirl at the top, we're saying it takes a parameter
 it's a function that now takes one parameter.
 To use it we use the @ (twirl)
 @ then scala expression, then it puts result of expression into html
+the mapping forms a two-way thing between a hash of strings and a thing you want
+unapply, something we haven't seen but backs case classes. behind the scenes, take this object and tuple and make a method. unapply is the reverse

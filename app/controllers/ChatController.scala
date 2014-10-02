@@ -1,9 +1,18 @@
 package controllers
 
 import play.api.mvc._
+import play.api.data._
+import play.api.data.Forms._
+
+case class Message(text: String)
 
 object ChatController extends Controller {
 
+ //   messageForm = Form(
+ //     mapping(
+ //       "text" -> text
+ //     )(Message.apply)(Message.unapply)
+ //   )
     var message = Seq("Hello", "This is", "Awesome")
 
     def index = Action { request =>
