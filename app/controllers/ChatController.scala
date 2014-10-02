@@ -8,20 +8,21 @@ case class Message(text: String)
 
 object ChatController extends Controller {
 
- //   messageForm = Form(
- //     mapping(
- //       "text" -> text
- //     )(Message.apply)(Message.unapply)
- //   )
+    val messageForm = Form(
+      mapping(
+        "text" -> text
+      )(Message.apply)(Message.unapply)
+    )
     var message = Seq("Hello", "This is", "Awesome")
 
     def index = Action { request =>
       Ok(views.html.index(message)) 
     }
 
-    def postMessage(newBit: String) = Action { request =>
-      message = message :+ newBit
-      Ok(views.html.index(message))
+    def postMessage = Action { request =>
+      val populatedForm: Form[Message] = messageForm.bindFromRequest()(request)
+      println(populatedForm)
+      Ok(views.html.index(message)) 
     }
 
     def calc(a: String, b: String) = Action { request =>

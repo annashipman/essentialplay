@@ -19,3 +19,7 @@ To use it we use the @ (twirl)
 @ then scala expression, then it puts result of expression into html
 the mapping forms a two-way thing between a hash of strings and a thing you want
 unapply, something we haven't seen but backs case classes. behind the scenes, take this object and tuple and make a method. unapply is the reverse
+can get the body out of request.body but that has no type
+request.body.asText gives an Option
+also there is .asJson
+request has this content in it
