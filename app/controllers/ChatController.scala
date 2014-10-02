@@ -13,16 +13,24 @@ object ChatController extends Controller {
         "text" -> text
       )(Message.apply)(Message.unapply)
     )
-    var message = Seq("Hello", "This is", "Awesome")
+    var messages = Seq("Hello", "This is", "Awesome")
 
     def index = Action { request =>
-      Ok(views.html.index(message)) 
+      Ok(views.html.index(messages)) 
     }
 
     def postMessage = Action { request =>
       val populatedForm: Form[Message] = messageForm.bindFromRequest()(request)
-      println(populatedForm)
-      Ok(views.html.index(message)) 
+
+      populatedForm.fold(
+        errors => {
+          BadRequest("errors")
+        },
+        message => {
+          messages = messages :+ message.text
+          Ok(views.html.index(messages))
+        }
+      )
     }
 
     def calc(a: String, b: String) = Action { request =>

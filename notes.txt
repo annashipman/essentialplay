@@ -23,3 +23,4 @@ can get the body out of request.body but that has no type
 request.body.asText gives an Option
 also there is .asJson
 request has this content in it
+validating, something something use Either... 
