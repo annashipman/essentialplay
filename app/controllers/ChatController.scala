@@ -8,13 +8,17 @@ case class Message(name: String, text: String)
 
 object ChatController extends Controller {
 
-    val messageForm = Form(
+    val messageForm: Form[Message] = Form(
       mapping(
         "text" -> text,
         "name" -> text
       )(Message.apply)(Message.unapply)
     )
-    var messages = Seq(Message("Anna", "Hello"), Message("Kush", "This is"), Message("Richard", "Awesome"))
+    var messages = Seq(
+      Message("Anna", "Hello"),
+      Message("Kush", "This is"),
+      Message("Richard", "Awesome")
+    )
 
     def index = Action { request =>
       Ok(views.html.index(messages)) 
