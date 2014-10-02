@@ -1,3 +1,3 @@
 # METHOD URL CONTROLLER CALL
 
-GET / controllers.ChatControllers.index
+GET / controllers.ChatController.index
