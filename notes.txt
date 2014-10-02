@@ -7,3 +7,6 @@ You need to set the perm gen size higher; export this before sbt `SBT_OPTS="-XX:
 args are not parameters to Action but to method that produces action (?)
 Need to give the types because compiled to Scala, no chance for type inference
 Can you make closing slashes optional?
+https://playframework.com/documentation/2.3.x/ScalaHome is useful.
+A view a html file that compiles to Scala (I think...)
+returns a type called Content
