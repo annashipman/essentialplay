@@ -1,15 +1,16 @@
-@(messages: Seq[String])
+@(messages: Seq[Message])
 
 <html>
   <body>
     <ul>
     @messages.map { message =>
-      <li>@message</li>
+      <li>@message.name: @message.text</li>
     }
     </ul>
 
     <form method="POST" action="/postMessage">
     <input name="text">
+    <input name="name">
     <button type="submit">Go!</button>
     </form>
   </body>

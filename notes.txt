@@ -24,3 +24,4 @@ request.body.asText gives an Option
 also there is .asJson
 request has this content in it
 validating, something something use Either... 
+If in the docs (Scala) you see a method with [use case] it means the definteion is a lie and the real stuff happenening is in 'Full Signature'

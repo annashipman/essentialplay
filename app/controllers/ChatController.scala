@@ -4,16 +4,17 @@ import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
 
-case class Message(text: String)
+case class Message(name: String, text: String)
 
 object ChatController extends Controller {
 
     val messageForm = Form(
       mapping(
-        "text" -> text
+        "text" -> text,
+        "name" -> text
       )(Message.apply)(Message.unapply)
     )
-    var messages = Seq("Hello", "This is", "Awesome")
+    var messages = Seq(Message("Anna", "Hello"), Message("Kush", "This is"), Message("Richard", "Awesome"))
 
     def index = Action { request =>
       Ok(views.html.index(messages)) 
@@ -27,7 +28,7 @@ object ChatController extends Controller {
           BadRequest("errors")
         },
         message => {
-          messages = messages :+ message.text
+          messages = messages :+ Message(message.name, message.text)
           Ok(views.html.index(messages))
         }
       )
