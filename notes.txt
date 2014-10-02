@@ -4,3 +4,6 @@ controllers
 routes
 `run` from the sbt prompt to start it. Once it's done, it will start the server on localhost:9000, and curl http://localhost:9000/
 You need to set the perm gen size higher; export this before sbt `SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M"`
+args are not parameters to Action but to method that produces action (?)
+Need to give the types because compiled to Scala, no chance for type inference
+Can you make closing slashes optional?

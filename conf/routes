@@ -1,3 +1,5 @@
 # METHOD URL CONTROLLER CALL
 
 GET / controllers.ChatController.index
+
+GET /calc/:a/:b controllers.ChatController.calc(a: String, b: String)
