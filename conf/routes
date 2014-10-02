@@ -3,3 +3,5 @@
 GET / controllers.ChatController.index
 
 GET /calc/:a/:b controllers.ChatController.calc(a: String, b: String)
+
+GET /postMessage/:newBit controllers.ChatController.postMessage(newBit: String)
