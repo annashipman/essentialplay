@@ -1,0 +1,4 @@
+sbt sits on top of Maven and Ivy
+actions - a function that takes a request and returns a response
+controllers
+routes
